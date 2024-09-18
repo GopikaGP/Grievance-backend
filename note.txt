@@ -1,0 +1,10 @@
+install the packages: express, cors, dotenv , mongoose
+- express tye framework of node js
+- mongoose := connect server and database
+ -.env store enviormnet variable
+
+
+ CRAETE .ENV FILE AND .GITIGNORE:
+ Inside gitoignore file: add node_modules and env
+ inside .envc file add :
+ database:mongodb+srv://gpgopika77:mern@cluster0.acipe.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
