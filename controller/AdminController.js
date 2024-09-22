@@ -1,7 +1,6 @@
 
 const adminUSer = require('../model/AdminUSer')
 const jwt = require('jsonwebtoken')
-const bcrypt = require('bcrypt');
 const Grievance = require('../model/GrievanceModel');
 
 

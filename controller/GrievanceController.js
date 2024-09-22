@@ -1,7 +1,7 @@
 const Grievance = require('../model/GrievanceModel'); // Ensure correct path
 const nodemailer = require('nodemailer');
 
-// Function to send email notifications
+
 
 
 // Create the transporter for Nodemailer
@@ -44,7 +44,7 @@ exports.submitGrievance = async (req, res) => {
 
     // Send confirmation email to user
     const userSubject = 'Complaint Received';
-    const userText = `Dear ${name},\n\nThank you for submitting your complaint. We have received it and are reviewing it.\n\nDescription:\n${description}\n\nBest regards,\nSuperhero Team`;
+    const userText = `Dear ${name},\n\ We have received a complaint reagrds you.\n\nDescription:\n${description}\n\nBest regards,\nSuperhero Team`;
     await sendEmailNotification(email, userSubject, userText);
 
     res.status(201).json(savedGrievance);
@@ -162,16 +162,5 @@ exports.getResolutionsByGrievanceId = async (req, res) => {
   }
 };
 
-exports.getGrievanceStatusById = async (req, res) => {
-  try {
-    const grievanceId = req.params.id;
-    const grievance = await Grievance.findById(grievanceId); // Replace GrievanceModel with your model
-    if (!grievance) {
-      return res.status(404).json({ message: 'Grievance not found' });
-    }
-    res.json(grievance);
-  } catch (error) {
-    console.error('Error fetching grievance:', error);
-    res.status(500).json({ message: 'Server error' });
-  }
-};
+
+

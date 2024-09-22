@@ -1,16 +1,13 @@
-const mongoose = require('mongoose'); // Add this line
+const mongoose = require('mongoose');
 
-const grievanceSchema = new mongoose.Schema({
-  email: { type: String, required: true },
-  name: { type: String, required: true },
-  description: { type: String, required: true },
+const GrievanceSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  description: String,
   status: { type: String, default: 'Pending' },
- 
-  createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date, default: Date.now },
+  resolutions: [{ response: String, date: Date }],
 });
 
 
-const Grievance = mongoose.model('Grievance', grievanceSchema);
-
+const Grievance = mongoose.model('Grievance', GrievanceSchema);
 module.exports = Grievance;

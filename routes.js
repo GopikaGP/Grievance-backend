@@ -32,7 +32,7 @@ router.get('/grievances/:id', grievanceController.getGrievanceById);
 router.post('/grievances/:id/reply', grievanceController.replyToGrievance);
 
 // Check grievance status by ID
-router.get('/grievances/status/:id', grievanceController.getGrievanceStatusById);
+router.get('/grievances/status/:id', grievanceController.getGrievanceById);
 
 // Submit a resolution
 router.post('/grievances/:id/resolution', grievanceController.submitResolution);
